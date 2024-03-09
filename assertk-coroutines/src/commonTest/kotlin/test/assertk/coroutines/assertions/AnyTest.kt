@@ -11,7 +11,7 @@ import kotlin.test.assertFailsWith
 import kotlinx.coroutines.test.runTest
 
 class AnyTest {
-    val subject = BasicObject("test")
+    private val subject = BasicObject("test")
 
     @Test
     fun suspendCall_passes() = runTest {

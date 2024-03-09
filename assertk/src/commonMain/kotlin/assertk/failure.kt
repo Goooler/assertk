@@ -4,7 +4,6 @@ import assertk.Failure.Companion.soft
 import com.willowtreeapps.opentest4k.AssertionFailedError
 import com.willowtreeapps.opentest4k.MultipleFailuresError
 import com.willowtreeapps.opentest4k.failures
-import kotlin.DeprecationLevel.HIDDEN
 
 /**
  * Assertions are run in a failure context which captures failures to report them.

@@ -32,7 +32,7 @@ fun Assert<Collection<*>>.isNotEmpty() = given { actual ->
  * @see [isEmpty]
  */
 fun Assert<Collection<*>?>.isNullOrEmpty() = given { actual ->
-    if (actual == null || actual.isEmpty()) return
+    if (actual.isNullOrEmpty()) return
     expected("to be null or empty but was:${show(actual)}")
 }
 

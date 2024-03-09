@@ -113,7 +113,6 @@ fun Assert<File>.hasExtension(expected: String) {
 /**
  * Asserts the file contains exactly the expected text (and nothing else).
  * @param charset The character set of the file, default is [Charsets.UTF_8]
- * @see [hasBytes]
  */
 fun Assert<File>.hasText(expected: String, charset: Charset = Charsets.UTF_8) {
     text(charset).isEqualTo(expected)

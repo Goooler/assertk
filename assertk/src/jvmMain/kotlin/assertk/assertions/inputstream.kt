@@ -25,10 +25,7 @@ fun Assert<InputStream>.hasSameContentAs(expected: InputStream) = given { actual
  * @param expected which content is compared to the actual one
  */
 fun Assert<InputStream>.hasNotSameContentAs(expected: InputStream) = given { actual ->
-    val msg = doTheStreamHaveTheSameContent(actual, expected)
-    if (msg == null) {
-        expected("streams not to be equal, but they were equal")
-    }
+    doTheStreamHaveTheSameContent(actual, expected) ?: expected("streams not to be equal, but they were equal")
 }
 
 private const val BUFFER_SIZE = 4096
@@ -113,7 +110,7 @@ private fun doTheStreamHaveTheSameContent(actual: InputStream, expected: InputSt
                         " but actual stream size ($actualSize) differs from other stream size ($otherSize)"
             }
 
-            val pos = compare(Math.min(actualRead, otherRead), actualBuffer, otherBuffer)
+            val pos = compare(actualRead.coerceAtMost(otherRead), actualBuffer, otherBuffer)
             val actualSize = consume(actual) + actualRead + size
             val otherSize = consume(expected) + otherRead + size
 

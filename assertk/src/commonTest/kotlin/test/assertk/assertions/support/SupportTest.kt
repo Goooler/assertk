@@ -1,8 +1,6 @@
 package test.assertk.assertions.support
 
 import assertk.assertThat
-import assertk.assertions.hasMessage
-import assertk.assertions.isEqualTo
 import assertk.assertions.isFailure
 import assertk.assertions.isSuccess
 import assertk.assertions.message

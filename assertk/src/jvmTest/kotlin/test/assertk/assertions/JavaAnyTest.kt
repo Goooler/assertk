@@ -4,15 +4,13 @@ import assertk.assertThat
 import assertk.assertions.*
 import test.assertk.opentestPackageName
 import java.lang.Exception
-import kotlin.reflect.KCallable
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFails
 import kotlin.test.assertFailsWith
 
 class JavaAnyTest {
-    val p: String = JavaAnyTest::class.java.name
-    val subject = BasicObject("test")
+    private val p: String = JavaAnyTest::class.java.name
+    private val subject = BasicObject("test")
 
     //region jClass
     @Test
@@ -187,7 +185,7 @@ class JavaAnyTest {
         val int: Int = 42,
         val double: Double = 3.14,
         val other: BasicObject? = null,
-        private val private: Int = 0,
+        private val private: Int = 0
     ) : TestObject() {
         val failing: String get() = throw Exception("sorry!")
 

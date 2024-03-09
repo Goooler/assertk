@@ -4,7 +4,6 @@ import assertk.assertThat
 import assertk.assertions.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFails
 import kotlin.test.assertFailsWith
 
 class ListTest {

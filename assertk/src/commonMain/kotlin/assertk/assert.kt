@@ -29,7 +29,7 @@ sealed class Assert<out T>(val name: String?, internal val context: AssertingCon
                     assertThat(transform(value), name)
                 } catch (e: Throwable) {
                     notifyFailure(e)
-                    failing<R>(e, name)
+                    failing(e, name)
                 }
             }
             is FailingAssert -> failing(error, name)

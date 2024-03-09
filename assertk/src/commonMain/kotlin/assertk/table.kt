@@ -6,7 +6,7 @@ private class TableFailure(private val table: Table) : Failure {
     private val failures: MutableMap<Int, MutableList<Throwable>> = LinkedHashMap()
 
     override fun fail(error: Throwable) {
-        failures.getOrPut(table.index, { ArrayList() }).plusAssign(error)
+        failures.getOrPut(table.index) { ArrayList() }.plusAssign(error)
     }
 
     override fun invoke() {
@@ -24,7 +24,7 @@ internal class TableFailuresError(
     private val table: Table,
     private val errors: Map<Int, List<Throwable>>
 ) : AssertionError() {
-    override val message: String?
+    override val message: String
         get() {
             val errorCount = errors.map { it.value.size }.sum()
             val prefix = if (errorCount == 1) {

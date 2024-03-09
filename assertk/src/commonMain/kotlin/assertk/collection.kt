@@ -16,11 +16,11 @@ private class CollectionFailure<T>(
     private val failures: MutableMap<Int, MutableList<Throwable>> = LinkedHashMap()
 
     override fun fail(error: Throwable) {
-        failures.getOrPut(index, { ArrayList() }).plusAssign(error)
+        failures.getOrPut(index) { ArrayList() }.plusAssign(error)
     }
 
     override fun invoke() {
-        CollectionCheck<T>(collectedItems, failures).check()
+        CollectionCheck(collectedItems, failures).check()
     }
 }
 

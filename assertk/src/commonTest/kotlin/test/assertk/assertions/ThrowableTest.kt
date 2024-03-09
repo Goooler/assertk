@@ -8,9 +8,9 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class ThrowableTest {
-    val rootCause = Exception("rootCause")
-    val cause = Exception("cause", rootCause)
-    val subject = Exception("test", cause)
+    private val rootCause = Exception("rootCause")
+    private val cause = Exception("cause", rootCause)
+    private val subject = Exception("test", cause)
 
     @Test
     fun extracts_message() {

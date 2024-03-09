@@ -1,9 +1,5 @@
 package test.assertk
 
-import assertk.assertThat
-import assertk.assertions.hasMessage
-import assertk.assertions.isFailure
-import assertk.assertions.isInstanceOf
 import assertk.fail
 import com.willowtreeapps.opentest4k.*
 import kotlin.test.*

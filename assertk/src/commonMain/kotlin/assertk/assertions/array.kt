@@ -58,7 +58,7 @@ fun Assert<Array<*>>.isNotEmpty() = given { actual ->
  * @see [isEmpty]
  */
 fun Assert<Array<*>?>.isNullOrEmpty() = given { actual ->
-    if (actual == null || actual.isEmpty()) return
+    if (actual.isNullOrEmpty()) return
     expected("to be null or empty but was:${show(actual)}")
 }
 

@@ -60,8 +60,8 @@ class NativeAssertAllTest {
         assertFalse(runs)
     }
 
-    fun aBunchOfWokers(f: (Worker) -> Future<Unit>) {
-        val workers = Array(20, { Worker.start() })
+    private fun aBunchOfWokers(f: (Worker) -> Future<Unit>) {
+        val workers = Array(20) { Worker.start() }
         val futures = mutableSetOf<Future<Unit>>()
         for (i in 0..5) {
             for (w in workers) {

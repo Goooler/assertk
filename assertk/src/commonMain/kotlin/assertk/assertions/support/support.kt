@@ -14,7 +14,7 @@ import assertk.fail
 fun show(value: Any?, wrap: String = "<>"): String =
     "${prefix(wrap)}${display(value)}${suffix(wrap)}"
 
-private fun prefix(wrap: String): String = if (wrap.length > 0) wrap[0].toString() else ""
+private fun prefix(wrap: String): String = if (wrap.isNotEmpty()) wrap[0].toString() else ""
 private fun suffix(wrap: String): String = if (wrap.length > 1) wrap[1].toString() else ""
 
 @Suppress("ComplexMethod")

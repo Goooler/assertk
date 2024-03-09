@@ -1,5 +1,3 @@
-@file:Suppress("NOTHING_TO_INLINE")
-
 package assertk
 
 internal actual inline fun failWithNotInStacktrace(error: Throwable): Nothing {

@@ -1,5 +1,4 @@
 import org.jetbrains.dokka.gradle.DokkaTask
-import java.util.Locale
 
 plugins {
     `maven-publish`

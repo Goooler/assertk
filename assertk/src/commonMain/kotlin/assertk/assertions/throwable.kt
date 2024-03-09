@@ -1,7 +1,6 @@
 package assertk.assertions
 
 import assertk.Assert
-import assertk.ValueAssert
 import assertk.all
 
 /**

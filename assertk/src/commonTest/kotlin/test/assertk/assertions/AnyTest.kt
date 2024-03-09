@@ -8,8 +8,9 @@ import kotlin.test.assertFails
 import kotlin.test.assertFailsWith
 
 class AnyTest {
-    val subject = BasicObject("test")
-    val nullableSubject: BasicObject? = BasicObject("test")
+    private val subject = BasicObject("test")
+    @Suppress("RedundantNullableReturnType")
+    private val nullableSubject: BasicObject? = BasicObject("test")
 
     @Test
     fun extracts_kClass() {
@@ -585,11 +586,11 @@ class AnyTest {
 
         class DifferentObject : TestObject()
 
-        class Expected(val value: String) {
+        class Expected(private val value: String) {
             override fun toString() = value
         }
 
-        class Actual(val value: String) {
+        class Actual(private val value: String) {
             override fun toString() = value
         }
     }

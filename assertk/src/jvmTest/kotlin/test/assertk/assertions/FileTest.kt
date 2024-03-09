@@ -8,8 +8,8 @@ import kotlin.test.*
 
 class FileTest {
 
-    val file = File.createTempFile("exists", "txt")
-    val directory = Files.createTempDirectory("isDirectory").toFile()
+    private val file = File.createTempFile("exists", "txt")
+    private val directory = Files.createTempDirectory("isDirectory").toFile()
 
     //region exists
     @Test
@@ -76,8 +76,8 @@ class FileTest {
     //endregion
 
     //region hasName
-    val namedFile = File("assertKt/file.txt")
-    val namedDirectory = File("assertKt/directory")
+    private val namedFile = File("assertKt/file.txt")
+    private val namedDirectory = File("assertKt/directory")
 
     @Test
     fun hasName_correct_value_file_passes() {
@@ -113,7 +113,7 @@ class FileTest {
     //endregion
 
     //region hasPath
-    val fileWithPath = File("assertKt/file.txt")
+    private val fileWithPath = File("assertKt/file.txt")
 
     @Test
     fun hasPath_correct_path_passes() {
@@ -133,7 +133,7 @@ class FileTest {
     //endregion
 
     //region hasParent
-    val fileWithParent = File("assertKt/directory/file.txt")
+    private val fileWithParent = File("assertKt/directory/file.txt")
 
     @Test
     fun hasParent_correct_parent_passes() {
@@ -157,7 +157,7 @@ class FileTest {
     //endregion
 
     //region hasExtension
-    val fileWithExtension = File("file.txt")
+    private val fileWithExtension = File("file.txt")
 
     @Test
     fun hasExtension_correct_extension_passes() {
@@ -177,8 +177,8 @@ class FileTest {
     //endregion
 
     //region hasText
-    val fileWithText = File.createTempFile("file_contains", ".txt")
-    val text =
+    private val fileWithText = File.createTempFile("file_contains", ".txt")
+    private val text =
         "The Answer to the Great Question... Of Life, the Universe and Everything... Is... Forty-two,' said Deep Thought, with infinite majesty and calm."
 
     @BeforeTest
@@ -218,8 +218,8 @@ class FileTest {
     //endregion
 
     //region matches
-    val matchingFile = File.createTempFile("file_contains", ".txt")
-    val matchingText = "Matches"
+    private val matchingFile = File.createTempFile("file_contains", ".txt")
+    private val matchingText = "Matches"
 
     @BeforeTest
     fun setupMatchingFile() {
@@ -243,8 +243,8 @@ class FileTest {
     //endregion
 
     //region hasDirectChild
-    val directoryWithChild = Files.createTempDirectory("isDirectory").toFile()
-    val childFile = File.createTempFile("file", ".txt", directoryWithChild)
+    private val directoryWithChild = Files.createTempDirectory("isDirectory").toFile()
+    private val childFile = File.createTempFile("file", ".txt", directoryWithChild)
 
     @Test
     fun hasDirectChild_value_is_child_passes() {
